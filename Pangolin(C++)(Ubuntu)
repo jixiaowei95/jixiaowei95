@@ -1,0 +1,24 @@
+//坐标轴的创建
+pangolin::glDrawAxis(3);  //3 is 坐标轴 length
+
+//画点
+//glBegin(GL_TRIANGLES);
+glPointSize(10.0);  //20 is the size of the point
+glBegin(GL_POINTS);
+glColor3f(0,1,0);//修改颜色
+glVertex3f(0,0,0);//设置定点坐标
+glVertex3f(0,1,0);
+glVertex3f(0,0,1);
+glEnd();//结束
+
+//画线
+glLineWidth(2);//设置线宽
+glBegin(GL_LINES);//2点为1条线，奇数点无效
+glColor3f(0,255,0);    
+glVertex3f(1,0,0);glVertex3f(0,1,0);
+glColor3f(255,0,0); 
+glVertex3f(0,0,1);glVertex3f(0,2,0);
+glEnd();
+
+//glBegin(GL_LINE_STRIP);//折线
+//glBegin(GL_LINE_LOOP);//封闭折线
